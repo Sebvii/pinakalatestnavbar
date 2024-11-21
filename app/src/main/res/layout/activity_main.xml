@@ -21,13 +21,16 @@
         android:id="@+id/bottom_navigation_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:itemBackground="@drawable/bottom_nav_item_background"
-    app:menu="@menu/bottom_nav_menu"
-    app:labelVisibilityMode="labeled"
-    app:itemTextColor="@color/bottom_nav_color_selector"
-    app:itemIconTint="@color/bottom_nav_color_selector"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemRippleColor="@null"
+        android:background="@color/white"
+    app:itemBackground="@android:color/transparent"
+    app:itemPadding="0dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
+
         // Set a listener for item selection
         bottomNavigationView.setOnItemSelectedListener(item -> {
             // Handle fragment switching
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Reset all items to default icon color
             for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-                bottomNavigationView.getMenu().getItem(i).getIcon().setTint(Color.GRAY); // Default color
+                bottomNavigationView.getMenu().getItem(i).getIcon().setTint(Color.WHITE); // Default color
             }
 
             // Set the selected item icon color to light green
