@@ -32,4 +32,18 @@
     <string name="abouts">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="points">POINTS: 85</string>
     <string name="collects">Collect points to redeem special awards</string>
+    <string name="termsandcondition"><![CDATA[Privacy & Terms]]></string>
+    <string name="textfour">Ensuring that the information you provide is accurate and up-to-date. Regularly updating the app to benefit from new features and improvements.</string>
+    <string name="nofour">4. User Responsibilities You are responsible for:</string>
+    <string name="textthree">C-Verde collects and processes personal information, such as your daily activities, energy usage, and travel habits, to calculate your carbon footprint.</string>
+    <string name="nothree">3. Data Collection and Privacy</string>
+    <string name="texttwo">Avoid any unauthorized access, tampering, or reverse engineering of the application.</string>
+    <string name="texttwos">• Use the app for lawful purposes and in compliance with all applicable laws.</string>
+    <string name="texttwosss">• Provide accurate data regarding your activities to ensure accurate carbon footprint tracking.</string>
+    <string name="txttwo">C-Verde is a carbon footprint tracker that allows users to monitor and reduce their environmental impact. By using the application, you agree to:</string>
+    <string name="notwo">2. Use of the Application</string>
+    <string name="textone">By downloading, installing, or using the C-Verde application, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the application.</string>
+    <string name="noone">1. Acceptance of Terms</string>
+    <string name="termsacondition">Terms and Conditions\"</string>
+    <string name="lastname">Last Name</string>
 </resources>

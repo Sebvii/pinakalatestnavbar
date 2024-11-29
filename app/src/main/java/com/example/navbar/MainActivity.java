@@ -2,7 +2,8 @@ package com.example.navbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private GestureDetector gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.fragment_container, new HomeFragment())
                     .commit();
         }
-
 
         // Set a listener for item selection
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -60,5 +62,47 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
+        // Initialize GestureDetector
+        gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+            private static final int SWIPE_THRESHOLD = 100;
+            private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                float diffX = e2.getX() - e1.getX();
+                float diffY = e2.getY() - e1.getY();
+
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                        if (diffX > 0) {
+                            onSwipeRight();
+                        } else {
+                            onSwipeLeft();
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event);
+    }
+
+    private void onSwipeRight() {
+        // Handle swipe right to go back
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            finish(); // If no fragments in back stack, exit activity
+        }
+    }
+
+    private void onSwipeLeft() {
+        // Handle swipe left (optional, depends on your app's behavior)
     }
 }

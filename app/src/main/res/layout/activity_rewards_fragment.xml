@@ -55,7 +55,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp" />
 
-        <!-- First Image: Centered -->
+        <!-- Second Image:  -->
         <ImageView
             android:id="@+id/rewardImagefive"
             android:layout_width="500dp"
@@ -64,7 +64,7 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/five_ticktetr" />
 
-        <!-- Second Image: Positioned Below the First Image -->
+        <!-- third Image:  -->
         <ImageView
             android:id="@+id/rewardImagetwo"
             android:layout_width="500dp"
@@ -74,7 +74,7 @@
             android:layout_marginTop="-30dp"
             android:src="@drawable/ten_ticketr" />
 
-        <!-- Third Image: Positioned Below the Second Image -->
+        <!-- FIrst Image: -->
         <ImageView
             android:id="@+id/rewardImagethree"
             android:layout_width="500dp"

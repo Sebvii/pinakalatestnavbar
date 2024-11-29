@@ -8,7 +8,7 @@
     <color name="backgroundDarkGray">#4B4453</color>
     <!-- Fully transparent color -->
     <color name="transparent">#00FFFFFF</color>
-
+    <color name="green">#4CAF50</color>
     <!-- Fully transparent background when the item is pressed (clicked) -->
     <color name="colorPressed">#00FFFFFF</color>  <!-- Transparent -->
     <color name="lightGreen">#90EE90</color>
