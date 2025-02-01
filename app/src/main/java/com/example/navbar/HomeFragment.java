@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_foot_print_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity_home_fragment, container, false);
 
         // Initialize views from the layout
         searchBar = view.findViewById(R.id.search_bar);
