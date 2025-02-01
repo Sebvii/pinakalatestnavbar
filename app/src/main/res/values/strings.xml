@@ -46,4 +46,12 @@
     <string name="noone">1. Acceptance of Terms</string>
     <string name="termsacondition">Terms and Conditions\"</string>
     <string name="lastname">Last Name</string>
+    <string name="games">Games</string>
+    <string name="community">Community\n</string>
+    <string name="based">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n</string>
+    <string name="data">Based on your data</string>
+    <string name="change">Change what you eat</string>
+    <string name="changes">Change what you eat\nOne of the most benificial\nactions you can take for the\nplanet is to significantly adopting\na healthy and balanced diet that \nincludes a greater variety of \nplant-based foods, sourcing\nmeat and fish from.</string>
+    <string name="egg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n</string>
+    <string name="toas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n</string>
 </resources>

@@ -1,350 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@android:color/white">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
+        <!-- Title Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recommended for you"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:hint="Search"
+            android:padding="12dp"
+            android:minHeight="43dp"
+            android:background="@drawable/search_background" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/what"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <!-- Horizontal ScrollView for the first set of boxes -->
-            <HorizontalScrollView
+
+        <!-- Tabs -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:paddingBottom="5dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-                <LinearLayout
+
+                <Button
+                    android:id="@+id/breakfast_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:text="Breakfast"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:textColor="@android:color/black"/>
 
-                    <!-- First Box -->
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/rounded_box"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Increase Image Size -->
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="Icon"
-                            android:src="@drawable/bike" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="-20dp"
-                            android:text="@string/bike"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="@string/bikes"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <!-- Second Box (Example continuation) -->
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/roundedbox_energy"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Increase Image Size -->
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="Icon"
-                            android:src="@drawable/energy_saver" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/energy"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/energys"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <!-- Third Box (Example continuation) -->
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/rounded_box"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Increase Image Size -->
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="Icon"
-                            android:src="@drawable/changewhatyoueat" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/eat"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/eats"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <!-- Fourth Box (Example continuation) -->
-                    <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/rounded_box"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Increase Image Size -->
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="Icon"
-                            android:src="@drawable/reducefoodwaste" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/wastes"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/wastess"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                    <!-- Add more boxes as needed -->
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <!-- Supporting Text -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/supportss"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/enterprise"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="@string/textssss"
-                android:textColor="#000000"
-                android:textSize="10sp"/>
-
-            <!-- Enterprises and Discounts Section -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp">
-
-                <LinearLayout
+                <Button
+                    android:id="@+id/lunch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:text="Lunch"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:textColor="@android:color/black"/>
 
-                    <!-- First Rectangle -->
-                    <LinearLayout
-                        android:layout_width="200dp"
+                <Button
+                    android:id="@+id/snacks_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Snacks"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:textColor="@android:color/black"/>
+
+                <Button
+                    android:id="@+id/dinner_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner"
+                    android:textSize="16sp"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Horizontal Scrollable Food List -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Food Item 1 -->
+
+                <LinearLayout
+                    android:id="@+id/fooditem1"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_marginEnd="16dp"
-                        android:elevation="4dp"
+                        android:background="@drawable/circle_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/global_warming" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="@drawable/rounded_box">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:contentDescription="Enterprise Icon"
-                            android:src="@drawable/masugid_enterprise" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Masugid Enterprise"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/rounded_box"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:contentDescription="Enterprise Icon"
-                            android:src="@drawable/wa_enterprise" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Masugid Enterprise"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/rounded_box"
-                        android:elevation="4dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:contentDescription="Enterprise Icon"
-                            android:src="@drawable/playmaker" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Masugid Enterprise"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <!-- Add more rectangles as needed -->
+                        android:text="Egg Toast"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-            </HorizontalScrollView>
+                <!-- Food Item 2 -->
+                <LinearLayout
+                    android:id="@+id/fooditem2"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-            <TextView
+
+                <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/circle_background"
+                        android:src="@drawable/global_warming" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pancakes"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Data Insights -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:text="@string/based"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <!-- Horizontal Scrollable Background with Text -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="@string/cverde"
-                android:textColor="#000000"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/learn_more_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:padding="0dp"
-                android:text="@string/learn"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:onClick="navigateToNextPage"/>
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="186dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
 
+            <!-- FrameLayout to overlay TextView on ImageView -->
+            <FrameLayout
+                android:layout_width="350dp"
+                android:layout_height="186dp">
+
+                <!-- Image in the background -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eat" />
+
+                <!-- Text over the Image with a semi-transparent background -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/changes"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" /> <!-- Semi-transparent background -->
+
+            </FrameLayout>
 
         </LinearLayout>
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Background 2 -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="186dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- FrameLayout to overlay TextView on ImageView -->
+                <FrameLayout
+                    android:layout_width="350dp"
+                    android:layout_height="186dp">
+
+                    <!-- Image in the background -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/waste" />
+
+                    <!-- Text over the Image with a semi-transparent background -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/changes"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center" /> <!-- Semi-transparent background -->
+
+                </FrameLayout>
+            </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+
+    </LinearLayout>
+</ScrollView>

@@ -2,107 +2,96 @@ package com.example.navbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Stack;
+
 public class MainActivity extends AppCompatActivity {
 
-    private GestureDetector gestureDetector;
+    private BottomNavigationView bottomNavigationView;
+    private final Stack<Integer> fragmentStack = new Stack<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
-        // Set the default fragment when the app is first launched
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
-                    .commit();
-        }
+        // Load the default fragment (HomeFragment)
+        loadFragment(new HomeFragment(), R.id.nav_home);
 
-        // Set a listener for item selection
+        // Handle bottom navigation item selection
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            // Handle fragment switching
-            Fragment selectedFragment = null;
+            int itemId = item.getItemId();
 
-            if (item.getItemId() == R.id.nav_home) {
+            // Avoid reloading the current fragment
+            if (!fragmentStack.isEmpty() && fragmentStack.peek() == itemId) {
+                return true;
+            }
+
+            Fragment selectedFragment = null;
+            if (itemId == R.id.nav_home) {
                 selectedFragment = new HomeFragment();
-            } else if (item.getItemId() == R.id.nav_footprint) {
+            } else if (itemId == R.id.nav_footprint) {
                 selectedFragment = new FootPrintFragment();
-            } else if (item.getItemId() == R.id.nav_rewards) {
-                selectedFragment = new RewardsFragment();
-            } else if (item.getItemId() == R.id.nav_profile) {
+            } else if (itemId == R.id.nav_profile) {
                 selectedFragment = new ProfileFragment();
-            } else {
-                return false;
             }
 
             if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, selectedFragment)
-                        .commit();
+                loadFragment(selectedFragment, itemId);
             }
-
-            // Reset all items to default icon color
-            for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-                bottomNavigationView.getMenu().getItem(i).getIcon().setTint(Color.WHITE); // Default color
-            }
-
-            // Set the selected item icon color to light green
-            item.getIcon().setTint(Color.parseColor("#90EE90")); // Light green color
 
             return true;
         });
+    }
 
-        // Initialize GestureDetector
-        gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
-            private static final int SWIPE_THRESHOLD = 100;
-            private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+    /**
+     * Load the selected fragment and update the stack.
+     */
+    private void loadFragment(Fragment fragment, int itemId) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
 
-            @Override
-            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                float diffX = e2.getX() - e1.getX();
-                float diffY = e2.getY() - e1.getY();
-
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                        if (diffX > 0) {
-                            onSwipeRight();
-                        } else {
-                            onSwipeLeft();
-                        }
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
+        // Add the selected fragment to the stack
+        if (!fragmentStack.isEmpty() && fragmentStack.peek() == itemId) {
+            return; // Prevent duplicate entries
+        }
+        fragmentStack.push(itemId);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event);
-    }
+    public void onBackPressed() {
+        // If the stack has more than one fragment, navigate back
+        if (fragmentStack.size() > 1) {
+            fragmentStack.pop(); // Remove the current fragment
+            int previousItemId = fragmentStack.peek();
 
-    private void onSwipeRight() {
-        // Handle swipe right to go back
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-            getSupportFragmentManager().popBackStack();
+            // Navigate to the previous fragment
+            Fragment previousFragment = null;
+            if (previousItemId == R.id.nav_home) {
+                previousFragment = new HomeFragment();
+            } else if (previousItemId == R.id.nav_footprint) {
+                previousFragment = new FootPrintFragment();
+            } else if (previousItemId == R.id.nav_profile) {
+                previousFragment = new ProfileFragment();
+            }
+
+            if (previousFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, previousFragment)
+                        .commit();
+                bottomNavigationView.setSelectedItemId(previousItemId);
+            }
         } else {
-            finish(); // If no fragments in back stack, exit activity
+            // If no fragments are left in the stack, exit the app
+            super.onBackPressed();
         }
-    }
-
-    private void onSwipeLeft() {
-        // Handle swipe left (optional, depends on your app's behavior)
     }
 }

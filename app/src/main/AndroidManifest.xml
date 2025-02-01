@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Navbar"
         tools:targetApi="31">
         <activity
+            android:name=".FoodTwo"
+            android:exported="false" />
+        <activity
+            android:name=".FoodOne"
+            android:exported="false" />
+        <activity
+            android:name=".PlayMaker"
+            android:exported="false" />
+        <activity
+            android:name=".Wani"
+            android:exported="false" />
+        <activity
+            android:name=".Masugid"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
