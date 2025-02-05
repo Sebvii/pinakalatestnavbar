@@ -49,16 +49,6 @@ public class FootPrintFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        arrowButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to Foodwaste activity
-                Intent intent = new Intent(getActivity(), Foodwaste.class);
-                startActivity(intent);
-            }
-        });
-
         return view;
     }
 }

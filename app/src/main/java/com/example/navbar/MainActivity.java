@@ -1,6 +1,5 @@
 package com.example.navbar;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = new FootPrintFragment();
             } else if (itemId == R.id.nav_profile) {
                 selectedFragment = new ProfileFragment();
+            } else if (itemId == R.id.nav_community) {
+                selectedFragment = new CommunityFragment();
+            } else if (itemId == R.id.nav_games) {
+                selectedFragment = new ProfileFragment();
             }
-
             if (selectedFragment != null) {
                 loadFragment(selectedFragment, itemId);
             }
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
+
 
     /**
      * Load the selected fragment and update the stack.
@@ -80,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
             } else if (previousItemId == R.id.nav_footprint) {
                 previousFragment = new FootPrintFragment();
             } else if (previousItemId == R.id.nav_profile) {
+                previousFragment = new ProfileFragment();
+            } else if (previousItemId == R.id.nav_community) {
+                previousFragment = new CommunityFragment();
+            } else if (previousItemId == R.id.nav_games) {
                 previousFragment = new ProfileFragment();
             }
 

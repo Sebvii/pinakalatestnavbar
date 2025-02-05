@@ -13,5 +13,7 @@
     <!-- Fully transparent background when the item is pressed (clicked) -->
     <color name="colorPressed">#00FFFFFF</color>  <!-- Transparent -->
     <color name="lightGreen">#90EE90</color>
+    <color name="Green">#97C97A</color>
+    <color name="lightgray">#D3D3D3</color>
     <!-- Default background color (you can keep it solid or also transparent if needed) -->
 </resources>

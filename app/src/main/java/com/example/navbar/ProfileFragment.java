@@ -71,7 +71,7 @@ public class ProfileFragment extends Fragment {
         });
 
         // Logout Click Listener
-        logoutContainer.setOnClickListener(v -> handleLogout());
+
     }
 
     private void showDeleteConfirmation() {
@@ -90,10 +90,5 @@ public class ProfileFragment extends Fragment {
         titleEmail.setText("");
     }
 
-    private void handleLogout() {
-        // Clear user session and navigate to LoginActivity
-        Intent intent = new Intent(getActivity(), Login.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+
 }
